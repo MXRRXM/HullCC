@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manifest XR - Hull City Council Proposal</title>
+    <style>
+        :root {
+            --hull-blue: #004b87;
+            --manifest-gold: #ffcc00;
+            --dark-grey: #333;
+            --light-grey: #f4f4f4;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            background-color: var(--dark-grey);
+            color: var(--dark-grey);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .deck-container {
+            width: 90vw;
+            height: 85vh;
+            background: var(--white);
+            position: relative;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+            border-radius: 8px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Logo Header Section */
+        .header-logos {
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #eee;
+        }
+
+        .logo-placeholder-img {
+            height: 50px;
+            width: 150px;
+            border: 1px dashed #ccc; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            color: #888;
+        }
+
+        .logo-placeholder-img img {
+            max-height: 100%;
+            max-width: 100%;
+        }
+
+        .slide {
+            display: none;
+            padding: 40px 60px;
+            height: 100%;
+            box-sizing: border-box;
+            flex-grow: 1;
+        }
+
+        .slide.active {
+            display: block;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h1 { color: var(--hull-blue); font-size: 2.5rem; margin-top: 0; }
+        h2 { color: var(--hull-blue); border-bottom: 3px solid var(--manifest-gold); display: inline-block; margin-bottom: 30px; }
+        p, li { font-size: 1.1rem; line-height: 1.5; }
+        
+        .highlight {
+            background: rgba(255, 204, 0, 0.2);
+            padding: 2px 5px;
+            font-weight: bold;
+            border-radius: 4px;
+        }
+
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+        
+        .image-box {
+            width: 100%;
+            height: 250px;
+            background: #eee;
+            border-radius: 8px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #ddd;
+        }
+
+        .image-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .stats-box {
+            background: var(--hull-blue);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .stats-box h3 { font-size: 2.5rem; margin: 10px 0; color: var(--manifest-gold); }
+
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th { background: var(--hull-blue); color: white; padding: 15px; text-align: left; }
+        td { padding: 12px; border-bottom: 1px solid #ddd; }
+        tr:nth-child(even) { background: #f9f9f9; }
+
+        /* Navigation */
+        .nav-controls {
+            position: absolute;
+            bottom: 20px;
+            right: 40px;
+            display: flex;
+            gap: 15px;
+            z-index: 100; /* Ensure buttons are on top */
+        }
+
+        button {
+            padding: 10px 20px;
+            background: var(--hull-blue);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        button:hover { background: #003366; }
+
+        .slide-number {
+            position: absolute;
+            bottom: 20px;
+            left: 40px;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+
+<div class="deck-container">
+    <div class="header-logos">
+        <div class="logo-placeholder-img">
+            <img src="path_to_manifest_logo.png" alt="Manifest XR Logo">
+        </div>
+        <div style="font-weight: bold; color: var(--hull-blue);">Manifest XR | TASI Academy</div>
+        <div class="logo-placeholder-img">
+            <img src="path_to_hull_logo.png" alt="Hull City Council Logo">
+        </div>
+    </div>
+
+    <div class="slide active">
+        <div style="text-align: center; margin-top: 40px;">
+            <h1 style="font-size: 3.2rem;">Bespoke Independent Travel Training (ITT)</h1>
+            <p style="font-size: 1.5rem;">A Scalable, AI-Driven Solution for Hull City Council</p>
+            
+            <div class="image-box" style="max-width: 600px; margin: 30px auto; height: 200px;">
+                <img src="hero_image.jpg" alt="Hero Image: Independence in Hull">
+            </div>
+
+            <div style="margin-top: 20px; border-top: 2px solid var(--manifest-gold); padding-top: 20px; display: inline-block;">
+                <strong>Innovation. Independence. Inclusion.</strong>
+            </div>
+        </div>
+    </div>
+
+    <div class="slide">
+        <h2>Unparalleled Return on Investment</h2>
+        <div class="grid">
+            <div>
+                <p>Manifest XR is replacing high-cost, low-volume traditional training with a scalable AI ecosystem.</p>
+                <ul>
+                    <li>Targets <strong>16–24 age group</strong> (Statutory Duty)</li>
+                    <li>Focuses on <strong>Early Intervention</strong> for SEND</li>
+                    <li>Bespoke to Hull’s specific routes & landmarks</li>
+                </ul>
+            </div>
+            <div class="stats-box">
+                <p>Current Cost Per Student</p>
+                <h3>£1,333</h3>
+                <hr>
+                <p>TASI Academy Cost Per Student</p>
+                <h3>£60</h3>
+                <p><small>*Based on 1,000 licenses per annum</small></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="slide">
+        <h2>Education Meets Innovation</h2>
+        <div class="grid">
+            <div>
+                <h3>Evidence-Informed Pedagogy</h3>
+                <p>Not just a digital tool, but a learning ecosystem designed for <span class="highlight">maximum knowledge retention</span> using visual, auditory, and experiential modalities.</p>
+                <h3>24/7 Live Assistance</h3>
+                <p>A "friend in the pocket." The TASI assistant live chat acts as a guide for students <strong>after</strong> training is completed, ensuring long-term safety.</p>
+            </div>
+            <div class="image-box" style="height: 350px;">
+                <img src="tasi_interface.jpg" alt="TASI App Interface" style="max-height: 350px; width: auto;">
+            </div> </div>
+    </div>
+
+    <div class="slide">
+        <h2>Safety First AI</h2>
+        <div class="grid">
+            <div>
+                <ul>
+                    <li><strong>KCSiE Guidelines:</strong> Built strictly in accordance with Keeping Children Safe in Education standards.</li>
+                    <li><strong>GDPR Compliant:</strong> Full protection of sensitive personal data.</li>
+                    <li><strong>Real-Time Monitoring:</strong> AI adjusts difficulty and provides feedback to ensure the learner is <span class="highlight">not overwhelmed or unsafe.</span></li>
+                </ul>
+            </div>
+            <div class="image-box">
+                <img src="safety_security.jpg" alt="Safeguarding & AI Monitoring">
+            </div>
+        </div>
+    </div>
+
+    <div class="slide">
+        <h2>Investment Summary</h2>
+        <div class="grid">
+            <div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Service Description</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Bespoke Hull City Council ITT Platform Build</td>
+                            <td><strong>Included</strong></td>
+                        </tr>
+                        <tr>
+                            <td>1,000 Individual Annual Licences</td>
+                            <td><strong>Included</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Live 1:1 Real-Time Support for All Learners</td>
+                            <td><strong>Included</strong></td>
+                        </tr>
+                        <tr>
+                            <td><strong>TOTAL ANNUAL COST</strong></td>
+                            <td><strong>£60,000 + VAT</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="image-box">
+                <img src="hull_transport.jpg" alt="Hull Public Transport">
+            </div>
+        </div>
+        <p style="margin-top: 20px; font-style: italic;">Saves the Council £80k+ compared to current 60-student models while reaching 1,000 residents.</p>
+    </div>
+
+    <div class="slide">
+        <div style="text-align: center; margin-top: 20px;">
+            <h2>The Future of Travel in Hull</h2>
+            <div class="image-box" style="max-width: 800px; margin: 0 auto 30px auto; height: 150px;">
+                <img src="future_vision.jpg" alt="Community Inclusion Image">
+            </div>
+            <div class="grid" style="text-align: left;">
+                <div style="background: var(--light-grey); padding: 20px; border-radius: 8px;">
+                    <h3>Economic Growth</h3>
+                    <p>Improved attendance in education and employment strengthens the local economy.</p>
+                </div>
+                <div style="background: var(--light-grey); padding: 20px; border-radius: 8px;">
+                    <h3>Legal Protection</h3>
+                    <p>Ensures statutory duties are met via a high-quality, documented training audit trail.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="slide-number" id="slideNum">Slide 1 / 6</div>
+    <div class="nav-controls">
+        <button onclick="changeSlide(-1)">Previous</button>
+        <button onclick="changeSlide(1)">Next</button>
+    </div>
+</div>
+
+<script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+    const slideNumDisplay = document.getElementById('slideNum');
+
+    function updateSlideNumber() {
+        slideNumDisplay.innerText = `Slide ${currentSlide + 1} / ${slides.length}`;
+    }
+
+    function changeSlide(direction) {
+        slides[currentSlide].classList.remove('active');
+        currentSlide = (currentSlide + direction + slides.length) % slides.length;
+        slides[currentSlide].classList.add('active');
+        updateSlideNumber();
+    }
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+        if (e.key === "ArrowRight" || e.key === " ") changeSlide(1);
+        if (e.key === "ArrowLeft") changeSlide(-1);
+    });
+
+    // Initialize slide number
+    updateSlideNumber();
+</script>
+
+</body>
+</html>
